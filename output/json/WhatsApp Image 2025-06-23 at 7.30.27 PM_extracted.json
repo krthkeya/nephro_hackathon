@@ -23,7 +23,7 @@
     "referring_doctor": null
   },
   "report_info": {
-    "type": "Clinical Chemistry Lab",
+    "type": "Lipid Panel, GE Pre employment Package",
     "result_report_date": "12/09/2018",
     "sample_col_date": "12/09/2018 08:14",
     "certified_result_date": "12/09/2018 15:18",
@@ -31,126 +31,130 @@
   },
   "test_results": [
     {
-      "test_name": "Cholesterol, total-Serum CHE-",
+      "test_name": "Cholesterol, total-Serum",
       "result_value": 168.5,
       "reference_range": [
         150.0,
         200.0
       ],
       "unit": "mg/dl",
-      "status": "abnormal"
+      "status": null
     },
     {
-      "test_name": "> Triglycerides -Serum GPO-POD",
+      "test_name": "Triglycerides -Serum",
       "result_value": 87.5,
       "reference_range": [
         50.0,
         150.0
       ],
       "unit": "mg/dl",
-      "status": "abnormal"
+      "status": null
     },
     {
-      "test_name": "HDL-Serum CHE-",
+      "test_name": "Cholesterol HDL-Serum",
       "result_value": 35.5,
       "reference_range": [
         40.0,
         60.0
       ],
       "unit": "mg/dl",
-      "status": "abnormal"
+      "status": null
     },
     {
-      "test_name": "> CHE-",
+      "test_name": "Cholesterol LDL-Serum",
       "result_value": 130.2,
       "reference_range": [
         100.0,
         129.0
       ],
       "unit": "mg/dt",
-      "status": "abnormal"
+      "status": null
     },
     {
-      "test_name": "VLDL",
+      "test_name": "Cholesterol VLDL",
       "result_value": 17.5,
       "reference_range": [
         0.0,
         39.0
       ],
       "unit": "mg/dl",
-      "status": "normal"
+      "status": null
     },
     {
-      "test_name": "> Glucose [F]- Hexokinase",
+      "test_name": "Glucose [F]- Hexokinase",
       "result_value": 91.3,
       "reference_range": [
         74.0,
         106.0
       ],
       "unit": "mg/dl",
-      "status": "abnormal"
+      "status": null
     },
     {
-      "test_name": "> Creatinine;-Serum JaffeMethod",
+      "test_name": "Creatinine;-Serum JaffeMethod",
       "result_value": 0.98,
       "reference_range": [
         0.0,
         1.2
       ],
-      "unit": "",
-      "status": "normal"
+      "unit": "mg/dl",
+      "status": null
     },
     {
-      "test_name": "> Uric acid - Serum Photometry",
+      "test_name": "Uric acid - Serum Photometry",
       "result_value": 7.2,
       "reference_range": [
         3.4,
         7.0
       ],
       "unit": "mg/dl",
-      "status": "abnormal"
+      "status": null
     },
     {
-      "test_name": "> Bilirubin Total -Serum Photometry",
+      "test_name": "Bilirubin Total -Serum Photometry",
       "result_value": 1.01,
       "reference_range": [
         0.0,
         1.1
       ],
       "unit": "mg/dl",
-      "status": "normal"
+      "status": null
     },
     {
-      "test_name": "> AST (SGOT) - serum",
+      "test_name": "AST (SGOT) - serum",
       "result_value": 13.8,
       "reference_range": [
         0.0,
         40.0
       ],
       "unit": "IU/L",
-      "status": "abnormal"
+      "status": null
     },
     {
-      "test_name": "> ALT [SGPT]-serum",
+      "test_name": "ALT [SGPT]-serum",
       "result_value": 16.6,
       "reference_range": [
         0.0,
         41.0
       ],
       "unit": "IU/L",
-      "status": "abnormal"
+      "status": null
+    },
+    {
+      "test_name": "G-6-PD -E & Lab",
+      "result_value": 5.8,
+      "reference_range": null,
+      "unit": "Units/gm of HB",
+      "status": "Deficient"
     }
   ],
   "additional_info": {
-    "notes": [
-      "Kindly Correlate with the clinical condition:",
-      "* RPC- Result Provisionally Certified, RC- Result Certified, RR- Result Rectified (*) Approval by Lab Authority is Pending (**) Non-NABL Services"
-    ]
+    "notes": null
   },
   "_metadata": {
     "source_image": "WhatsApp Image 2025-06-23 at 7.30.27 PM.jpeg",
     "extraction_method": "tesseract_ollama_deepseek",
-    "processing_timestamp": "2025-06-24T14:21:41.128079",
-    "model_used": "llama3.2:3b"
+    "processing_timestamp": "2025-06-25T14:27:27.859661",
+    "model_used": "mistral:7b"
   }
 }

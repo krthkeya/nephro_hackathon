@@ -21,7 +21,7 @@ INPUT_FOLDER = "./input_images"  # Folder containing medical report images
 OUTPUT_FOLDER = "./output"       # Where to save results
 MAX_IMAGES = 0                   # 0 = process all images, else limit to this number
 OLLAMA_BASE_URL = "http://localhost:11434"  # Default Ollama URL
-OLLAMA_MODEL = "llama3.2:3b"  # Model to use
+OLLAMA_MODEL = "mistral:7b"  # Model to use
 DEBUG_MODE = True                # Enable detailed debugging output
 # =====================================
 
@@ -170,17 +170,93 @@ Return ONLY the JSON structure, no additional text or explanations."""
                 print(f"   🏷️  Model: {self.model_name}")
             
             # Call Ollama API
+            
+            # modified request data, leveraging ollamas structured output (format paramter), to ensure robust output every time, even for smaller models.
+            # structured output also allows json to have other objects other than strings as values.
             request_data = {
-                "model": self.model_name,
+                "model": "mistral:7b",  
                 "prompt": prompt,
                 "stream": False,
-                "options": {
-                    "temperature": 0.1,
-                    "top_p": 0.9,
-                    "max_tokens": 2048
+                "format": {
+                    "type": "object",
+                    "properties": {
+                        "hospital_info": {
+                            "type": "object",
+                            "properties": {
+                                "name": {"type": ["string", "null"]},
+                                "address": {"type": ["string", "null"]},
+                                "phone": {
+                                    "type": ["array", "null"],
+                                    "items": {"type": "string"}
+                                },
+                                "fax": {"type": ["string", "null"]},
+                                "website": {"type": ["string", "null"]}
+                            },
+                            "required": ["name", "address", "phone", "fax", "website"]
+                        },
+                        "patient_info": {
+                            "type": "object",
+                            "properties": {
+                                "name": {"type": ["string", "null"]},
+                                "age": {"type": ["string", "null"]},
+                                "sex": {"type": ["string", "null"]},
+                                "visit_id": {"type": ["string", "null"]},
+                                "dob": {"type": ["string", "null"]}
+                            },
+                            "required": ["name", "age", "sex", "visit_id", "dob"]
+                        },
+                        "doctor_info": {
+                            "type": "object",
+                            "properties": {
+                                "consulting_doctor": {"type": ["string", "null"]},
+                                "pathologist": {"type": ["string", "null"]},
+                                "referring_doctor": {"type": ["string", "null"]}
+                            },
+                            "required": ["consulting_doctor", "pathologist", "referring_doctor"]
+                        },
+                        "report_info": {
+                            "type": "object",
+                            "properties": {
+                                "type": {"type": ["string", "null"]},
+                                "result_report_date": {"type": ["string", "null"]},
+                                "sample_col_date": {"type": ["string", "null"]},
+                                "certified_result_date": {"type": ["string", "null"]},
+                                "visit_type": {"type": ["string", "null"]}
+                            },
+                            "required": ["type", "result_report_date", "sample_col_date", "certified_result_date", "visit_type"]
+                        },
+                        "test_results": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "test_name": {"type": ["string", "null"]},
+                                    "result_value": {"type": ["number", "null"]},
+                                    "reference_range": {
+                                        "type": ["array", "null"],
+                                        "items": {"type": "number"}
+                                    },
+                                    "unit": {"type": ["string", "null"]},
+                                    "status": {"type": ["string", "null"]}
+                                },
+                                "required": ["test_name", "result_value", "reference_range", "unit", "status"]
+                            }
+                        },
+                        "additional_info": {
+                            "type": "object",
+                            "properties": {
+                                "notes": {
+                                    "type": ["array", "null"],
+                                    "items": {"type": "string"}
+                                }
+                            },
+                            "required": ["notes"]
+                        }
+                    },
+                    "required": ["hospital_info", "patient_info", "doctor_info", "report_info", "test_results", "additional_info"]
                 }
             }
-            
+                        
             response = requests.post(
                 f"{self.ollama_url}/api/generate",
                 json=request_data,
