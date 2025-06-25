@@ -1,0 +1,156 @@
+{
+  "hospital_info": {
+    "name": "Anrita Institute of Medical Sciences and Research Centre",
+    "address": "Elamakkara P.O Kochi-26",
+    "phone": [
+      "0091 (0) 484 280 1234",
+      "0091 (0) 484 280 4321",
+      "0091 (0) 484 400 1234"
+    ],
+    "fax": "0091 (0) 484 280 2020",
+    "website": null
+  },
+  "patient_info": {
+    "name": "FREDIN TOM CYRIAC",
+    "age": "25 Years",
+    "sex": "M",
+    "visit_id": "OP0001",
+    "dob": "21/12/1992"
+  },
+  "doctor_info": {
+    "consulting_doctor": "Anoop Menon",
+    "pathologist": null,
+    "referring_doctor": null
+  },
+  "report_info": {
+    "type": "Clinical Chemistry Lab",
+    "result_report_date": "12/09/2018",
+    "sample_col_date": "12/09/2018 08:14",
+    "certified_result_date": "12/09/2018 15:18",
+    "visit_type": "OP"
+  },
+  "test_results": [
+    {
+      "test_name": "Cholesterol, total-Serum CHE-",
+      "result_value": 168.5,
+      "reference_range": [
+        150.0,
+        200.0
+      ],
+      "unit": "mg/dl",
+      "status": "abnormal"
+    },
+    {
+      "test_name": "> Triglycerides -Serum GPO-POD",
+      "result_value": 87.5,
+      "reference_range": [
+        50.0,
+        150.0
+      ],
+      "unit": "mg/dl",
+      "status": "abnormal"
+    },
+    {
+      "test_name": "HDL-Serum CHE-",
+      "result_value": 35.5,
+      "reference_range": [
+        40.0,
+        60.0
+      ],
+      "unit": "mg/dl",
+      "status": "abnormal"
+    },
+    {
+      "test_name": "> CHE-",
+      "result_value": 130.2,
+      "reference_range": [
+        100.0,
+        129.0
+      ],
+      "unit": "mg/dt",
+      "status": "abnormal"
+    },
+    {
+      "test_name": "VLDL",
+      "result_value": 17.5,
+      "reference_range": [
+        0.0,
+        39.0
+      ],
+      "unit": "mg/dl",
+      "status": "normal"
+    },
+    {
+      "test_name": "> Glucose [F]- Hexokinase",
+      "result_value": 91.3,
+      "reference_range": [
+        74.0,
+        106.0
+      ],
+      "unit": "mg/dl",
+      "status": "abnormal"
+    },
+    {
+      "test_name": "> Creatinine;-Serum JaffeMethod",
+      "result_value": 0.98,
+      "reference_range": [
+        0.0,
+        1.2
+      ],
+      "unit": "",
+      "status": "normal"
+    },
+    {
+      "test_name": "> Uric acid - Serum Photometry",
+      "result_value": 7.2,
+      "reference_range": [
+        3.4,
+        7.0
+      ],
+      "unit": "mg/dl",
+      "status": "abnormal"
+    },
+    {
+      "test_name": "> Bilirubin Total -Serum Photometry",
+      "result_value": 1.01,
+      "reference_range": [
+        0.0,
+        1.1
+      ],
+      "unit": "mg/dl",
+      "status": "normal"
+    },
+    {
+      "test_name": "> AST (SGOT) - serum",
+      "result_value": 13.8,
+      "reference_range": [
+        0.0,
+        40.0
+      ],
+      "unit": "IU/L",
+      "status": "abnormal"
+    },
+    {
+      "test_name": "> ALT [SGPT]-serum",
+      "result_value": 16.6,
+      "reference_range": [
+        0.0,
+        41.0
+      ],
+      "unit": "IU/L",
+      "status": "abnormal"
+    }
+  ],
+  "additional_info": {
+    "notes": [
+      "Kindly Correlate with the clinical condition:",
+      "* RPC- Result Provisionally Certified, RC- Result Certified, RR- Result Rectified (*) Approval by Lab Authority is Pending (**) Non-NABL Services"
+    ]
+  },
+  "_metadata": {
+    "source_image": "WhatsApp Image 2025-06-23 at 7.30.27 PM.jpeg",
+    "extraction_method": "tesseract_ollama_deepseek",
+    "processing_timestamp": "2025-06-24T14:21:41.128079",
+    "model_used": "llama3.2:3b"
+  }
+}
